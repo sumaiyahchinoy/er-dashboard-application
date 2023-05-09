@@ -1,0 +1,55 @@
+.dashboard-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    /* Add a smooth transition effect */
+}
+
+.dashboard-item:hover {
+    background-color: #457b9d;
+    /* Change the background color on hover */
+    color: white;
+    /* Change the text color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add a box shadow for a 3D effect */
+}
+
+.dashboard-item-icon {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.dashboard-item-content {
+    flex: 1;
+}
+
+.dashboard-item-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 20px;
+}
+
+@media (max-width: 1350px) {
+    .dashboard-item-title {
+        display: none;
+    }
+
+    .dashboard-item {
+        justify-content: center;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .dashboard-item-content {
+        display: none;
+    }
+
+    .dashboard-item-icon {
+        font-size: 24px;
+        margin-right: 0px;
+    }
+}

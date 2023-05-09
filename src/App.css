@@ -1,38 +1,55 @@
-.App {
+/* .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  //Set the left position to the width of the nav bar
+  right: 0;
+  bottom: 0;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+} */
+
+.FullScreenContainer {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
 }
 
-.App-link {
-  color: #61dafb;
+.ScreenContainer {
+  background-color: #f1f2f7;
+  flex: 8.5;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.HeadingContainer {
+  /* flex-grow: 1; */
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 40px;
+  color: #8c8fb3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.DashboardContainer {
+  height: 90vh;
+  /* max-height: 800px; */
+}
+
+.BottomContainer {
+  height: 10px;
+}
+
+.DashboardFrame {
+  /* adjusted width to -20px to remove whitespaces */
+  height: calc((90vh * 1.725)* 0.5797);
+  width: calc(90vh * 1.725);
+  background-color: #f1f2f7;
+  /* height: 800px; */
+  /* width: 1380px; */
 }

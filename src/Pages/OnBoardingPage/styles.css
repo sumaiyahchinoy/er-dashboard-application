@@ -1,0 +1,46 @@
+.HomePage-FullScreenContainer {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right, #8d99ae 0%, #8d99ae 35%, #1D3557 35%, #1D3557 100%);
+    align-items: center;
+    padding-left: 40px;
+    justify-content: flex-start;
+}
+
+.grey-container {
+    /* width: 35%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.container {
+    padding-top: 32px;
+    padding-bottom: 16px;
+    padding-right: 16px;
+    padding-right: 16px;
+    background-color: #eeeeee;
+    border-radius: 25px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.textField {
+    width: 80%;
+    margin: 16px !important;
+}
+
+.button {
+    font-size: 20px !important;
+    margin: 16px !important;
+    width: 60%;
+    background: #1D3557 !important;
+}
