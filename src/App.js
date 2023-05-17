@@ -1,35 +1,56 @@
-import LeftNavBar from "./Components/NavBar";
-import DashboardItem from "./Components/DashboardItem";
-// import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage } from "./Pages/HomePage";
+import { RealTimeAnalysis } from "./Pages/RealTimeAnalysis";
+import { OverallAnalysis } from "./Pages/OverallAnalysis";
 import { OnBoardingPage } from "./Pages/OnBoardingPage";
+import { Forecasting } from "./Pages/Forecasting";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 function App() {
+  const userLoggedIn = sessionStorage.getItem("userLoggedIn");
   return (
     <>
-      {/* <div className="FullScreenContainer">
-        <LeftNavBar />
-        <div className="ScreenContainer">
-          <div className="HeadingContainer">
-            INDUS HOSPITAL EMERGENCY DASHBOARD
-          </div>
-          <div className="DashboardContainer">
-            <iframe
-              title="Report Section"
-              src={process.env.REACT_APP_REPORT_LINK}
-              frameborder="0"
-              allowFullScreen="false"
-              className="DashboardFrame"
-            ></iframe>
-          </div>
-          <div className="BottomContainer"></div>
-        </div>
-      </div> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<OnBoardingPage />} />
-          <Route path="/homePage" element={<HomePage />} />
+          <Route path="/realTimeAnalysis">
+            {userLoggedIn && (
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <RealTimeAnalysis />
+                  </ProtectedRoute>
+                }
+              />
+            )}
+            {!userLoggedIn && <Route index element={" 404 NOT FOUND"} />}
+          </Route>
+          <Route path="/overallAnalysis">
+            {userLoggedIn && (
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <OverallAnalysis />
+                  </ProtectedRoute>
+                }
+              />
+            )}
+            {!userLoggedIn && <Route index element={" 404 NOT FOUND"} />}
+          </Route>
+          <Route path="/forecasting">
+            {userLoggedIn && (
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <Forecasting />
+                  </ProtectedRoute>
+                }
+              />
+            )}
+            {!userLoggedIn && <Route index element={" 404 NOT FOUND"} />}
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

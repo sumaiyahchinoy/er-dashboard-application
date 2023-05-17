@@ -19,22 +19,30 @@ const LeftNavBar = () => {
   const dashboardData = [
     {
       id: 1,
-      title: "Overall Analysis",
-      icon: <AnalyticsRoundedIcon sx={{ fontSize: "40px" }} />,
-    },
-    {
-      id: 2,
       title: "Real Time Analysis",
       icon: <i className="fa fa-file"></i>,
       icon: <AutoGraphRoundedIcon sx={{ fontSize: "40px" }} />,
+      link: "/realTimeAnalysis",
+    },
+    {
+      id: 2,
+      title: "Overall Analysis",
+      icon: <AnalyticsRoundedIcon sx={{ fontSize: "40px" }} />,
+      link: "/overallAnalysis",
     },
     {
       id: 3,
       title: "Forecasting",
       icon: <TimelineRoundedIcon sx={{ fontSize: "40px" }} />,
+      link: "/forecasting",
     },
   ];
 
+  const LogOut = () => {
+    sessionStorage.removeItem("userAccessToken");
+    sessionStorage.removeItem("userLoggedIn");
+    window.location = "/";
+  };
   return (
     <div className="left-nav-bar">
       <ul>
@@ -50,7 +58,15 @@ const LeftNavBar = () => {
         )}
         {dashboardData.map((item) => (
           <li>
-            <DashboardItem key={item.id} icon={item.icon} title={item.title} />
+            <DashboardItem
+              key={item.id}
+              icon={item.icon}
+              title={item.title}
+              onClick={() => {
+                // handle click event
+                window.location = item.link;
+              }}
+            />
           </li>
         ))}
         <li>
@@ -58,6 +74,10 @@ const LeftNavBar = () => {
             key="4"
             icon={<LogoutRoundedIcon sx={{ fontSize: "40px" }} />}
             title="Logout"
+            onClick={() => {
+              // handle click event
+              LogOut();
+            }}
           />
         </li>
       </ul>

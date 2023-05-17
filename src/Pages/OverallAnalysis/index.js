@@ -1,7 +1,7 @@
 import LeftNavBar from "../../Components/NavBar";
 import "./styles.css";
 
-export function HomePage() {
+export function OverallAnalysis() {
   return (
     <>
       <div className="FullScreenContainer">
@@ -17,9 +17,7 @@ export function HomePage() {
               className="DashboardFrame"
             ></iframe>
           </div>
-          <div className="HeadingContainer">
-            {/* INDUS HOSPITAL EMERGENCY DASHBOARD */}
-          </div>
+          <div className="HeadingContainer"></div>
         </div>
       </div>
     </>

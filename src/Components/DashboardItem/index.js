@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles.css"; // Import your CSS styles here
 
-const DashboardItem = ({ icon, title }) => {
+const DashboardItem = ({ icon, title, onClick }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const DashboardItem = ({ icon, title }) => {
   }, []);
 
   return (
-    <div className="dashboard-item">
+    <div className="dashboard-item" onClick={onClick}>
       <div className="dashboard-item-icon">{icon}</div>
       {screenWidth >= 1350 && (
         <div className="dashboard-item-content">

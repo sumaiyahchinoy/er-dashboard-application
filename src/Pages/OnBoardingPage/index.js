@@ -1,4 +1,3 @@
-import "./styles.css";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -10,26 +9,22 @@ export function OnBoardingPage() {
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
-    console.log(data);
   };
 
   const handleSubmit = async (e) => {
-    console.log("here");
-    // e.preventDefault();
     try {
       const config = {
         headers: {
           "Content-Type": "application/json",
-          // Authorization: `token ${token}`,
         },
       };
-      var url = "http://localhost:3002/auth/login";
+      var url = "https://ih-care-node.vercel.app/auth/login";
+
       await axios.post(url, data, config).then((response) => {
         var data = response.data;
-        console.log("hello");
-        console.log(data.accessToken);
         sessionStorage.setItem("userAccessToken", data.accessToken);
-        window.location = "/homePage";
+        sessionStorage.setItem("userLoggedIn", true);
+        window.location = "/realTimeAnalysis";
       });
     } catch (error) {
       if (
@@ -71,7 +66,6 @@ export function OnBoardingPage() {
             className="button"
             variant="contained"
             color="primary"
-            type="submit"
             onClick={() => {
               handleSubmit();
             }}
