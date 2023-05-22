@@ -3,8 +3,9 @@ import { Navigate, useLocation } from "react-router-dom";
 
 const isTokenValid = async (e) => {
   const token = sessionStorage.getItem("userAccessToken");
+  var url = process.env.REACT_APP_NODE_BACKEND + "auth/";
   try {
-    const response = await axios.get("https://ih-care-node.vercel.app/auth/", {
+    const response = await axios.get(url, {
       headers: {
         Authorization: `token ${token}`,
       },

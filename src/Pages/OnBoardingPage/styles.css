@@ -1,11 +1,34 @@
 .HomePage-FullScreenContainer {
     display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(to right, #8d99ae 0%, #8d99ae 35%, #1D3557 35%, #1D3557 100%);
+    background: linear-gradient(to bottom, #1D3557 0%,
+            #1D3557 80%, #8d99ae 80%, #8d99ae 100%);
+    justify-content: space-between;
+
+}
+
+.Middle-Container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
     align-items: center;
-    padding-left: 40px;
-    justify-content: flex-start;
+}
+
+.Header-Container {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Title-Container {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: bold;
+    color: #eeeeee;
+    font-size: 60px;
 }
 
 .grey-container {
