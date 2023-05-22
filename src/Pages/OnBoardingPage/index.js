@@ -52,7 +52,7 @@ export function OnBoardingPage() {
     <div className="HomePage-FullScreenContainer">
       <div className="Header-Container">
         <div className="Title-Container">Indus Hospital - Care</div>
-        <img src={images.logoScaled} width="350" height="123"></img>
+        <img src={images.logoScaled} width="300" height="105"></img>
       </div>
       <div className="Middle-Container">
         <div className="container">
@@ -93,17 +93,15 @@ export function OnBoardingPage() {
       </div>
       <div className="Header-Container">
         <LocalHospitalOutlinedIcon
-          sx={{ fontSize: "100px", color: "#eeeeee" }}
+          sx={{ fontSize: "80px", color: "#eeeeee" }}
         />
-        <VaccinesOutlinedIcon sx={{ fontSize: "100px", color: "#eeeeee" }} />
-        <BloodtypeOutlinedIcon sx={{ fontSize: "100px", color: "#eeeeee" }} />
-        <MasksOutlinedIcon sx={{ fontSize: "100px", color: "#eeeeee" }} />
+        <VaccinesOutlinedIcon sx={{ fontSize: "80px", color: "#eeeeee" }} />
+        <BloodtypeOutlinedIcon sx={{ fontSize: "80px", color: "#eeeeee" }} />
+        <MasksOutlinedIcon sx={{ fontSize: "80px", color: "#eeeeee" }} />
         <MedicalServicesOutlinedIcon
-          sx={{ fontSize: "100px", color: "#eeeeee" }}
+          sx={{ fontSize: "80px", color: "#eeeeee" }}
         />
-        <MonitorHeartOutlinedIcon
-          sx={{ fontSize: "100px", color: "#eeeeee" }}
-        />
+        <MonitorHeartOutlinedIcon sx={{ fontSize: "80px", color: "#eeeeee" }} />
       </div>
     </div>
   );
