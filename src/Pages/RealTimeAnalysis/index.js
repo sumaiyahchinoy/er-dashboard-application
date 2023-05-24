@@ -11,7 +11,7 @@ export function RealTimeAnalysis() {
           <div className="DashboardContainer">
             <iframe
               title="Indus_Dashboard-DESKTOP-DPUSIS3"
-              src={process.env.REACT_APP_REPORT_LINK}
+              src={process.env.REACT_APP_REALTIME_LINK}
               frameborder="0"
               allowFullScreen="true"
               className="DashboardFrame"
